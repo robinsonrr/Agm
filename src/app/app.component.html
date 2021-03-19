@@ -1,0 +1,22 @@
+<agm-map 
+   [latitude]="lugares[0].lat" 
+   [longitude]="lugares[0].lng"
+   [zoom]="20">
+
+  <agm-marker 
+    [latitude]="lugares[0].lat"
+    [longitude]="lugares[0].lng"
+    [label]="lugares[0].lugar">
+
+  </agm-marker>
+
+</agm-map>
+
+<ng-continer *ngFor="let lugar of lugares">
+   <li *ngIf="lugar.lat > 100">{{lugar.lugar}}</li>
+</ng-continer>
+<hr>
+<select (change)="saludo('HOla')">
+  <option *ngFor="let place of lugares, let i=index">{{i+1}}&nbsp; {{place.lugar}}</option>
+  
+</select>
